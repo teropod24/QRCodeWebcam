@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34902.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeWebcam", "QRCodeWebcam\QRCodeWebcam.csproj", "{8BD5E0FE-67D3-49DA-8DF4-28CFB65AF5A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator", "QrGenerator\QrGenerator\QrGenerator.csproj", "{281061DC-3BC0-4ADD-9AAE-0B8438B3AC30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BD5E0FE-67D3-49DA-8DF4-28CFB65AF5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD5E0FE-67D3-49DA-8DF4-28CFB65AF5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD5E0FE-67D3-49DA-8DF4-28CFB65AF5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD5E0FE-67D3-49DA-8DF4-28CFB65AF5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281061DC-3BC0-4ADD-9AAE-0B8438B3AC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281061DC-3BC0-4ADD-9AAE-0B8438B3AC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281061DC-3BC0-4ADD-9AAE-0B8438B3AC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281061DC-3BC0-4ADD-9AAE-0B8438B3AC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0246C9B-A183-4603-9145-14F8CA341313}
+	EndGlobalSection
+EndGlobal
