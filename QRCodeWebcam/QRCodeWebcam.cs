@@ -19,35 +19,24 @@ namespace QRCodeWebcam
     {
         int[] codigo;
 
-        private int contador = 0;
-        private Timer timer;
+        private int contador = 60000;
+
         public QRCodeWebcam()
         {
             InitializeComponent();
             codigo = GenerarNumerosAleatorios(6, 0, 9);
-
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Tick += timer1_Tick;
-
         }
 
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice captureDevice;
         private void Form1_Load(object sender, EventArgs e)
         {
-            //string cadena_codi = "";
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filterInfoCollection)
             {
                 cbo_Device.Items.Add(filterInfo.Name);
             }
             cbo_Device.SelectedIndex = 0;
-            //foreach (int item in codigo)
-            //{
-            //    cadena_codi += item.ToString();
-            //}
-            //MessageBox.Show(cadena_codi);
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
@@ -55,6 +44,7 @@ namespace QRCodeWebcam
             captureDevice = new VideoCaptureDevice(filterInfoCollection[cbo_Device.SelectedIndex].MonikerString);
             captureDevice.NewFrame += CaptureDevice_NewFrame;
             captureDevice.Start();
+            timer1.Interval = 10;
             timer1.Start();
         }
 
@@ -73,37 +63,37 @@ namespace QRCodeWebcam
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //if (pictureBox1.Image != null)
-            //{
-            //    BarcodeReader barcodeReader = new BarcodeReader();
-            //    Result result = barcodeReader.Decode((Bitmap)pictureBox1.Image);
-
-            //    if (result != null)
-            //    {
-            //        txt_QRCode.Text = result.ToString();
-            //        timer1.Stop();
-            //        if (captureDevice.IsRunning)
-            //        {
-            //            captureDevice.Stop();
-            //        }
-            //    }
-            //}
-
-            if (!timer.Enabled)
+            if (pictureBox1.Image != null)
             {
-                contador = 0; 
-                lab_timer.Text = "0";
-                timer.Start();
-                lab_timer.Text = "Detener";
+                BarcodeReader barcodeReader = new BarcodeReader();
+                Result result = barcodeReader.Decode((Bitmap)pictureBox1.Image);
+
+                if (result != null)
+                {
+                    txt_QRCode.Text = result.ToString();
+                    timer1.Stop();
+                    if (captureDevice.IsRunning)
+                    {
+                        captureDevice.Stop();
+                    }
+                }
+            }
+
+            if (contador <= 0)
+            {
+                lab_timer.Text = "00:000"; 
+                timer1.Stop();
             }
             else
             {
-                timer.Stop();
-                Text = "Iniciar";
+                contador -= 10;
+
+                int segundos = contador / 1000;
+                int milisegundos = (contador % 1000) / 10;
+
+                lab_timer.Text = $"{segundos:D2}:{milisegundos:D2}";
             }
 
-            contador++;
-            lab_timer.Text = contador.ToString();
         }
 
         private int[] GenerarNumerosAleatorios(int cantidad, int min, int max)
