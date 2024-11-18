@@ -22,3 +22,5 @@ C:\S2AM\Arduino\QRCodeWebcam\Login\obj\Debug\Login.csproj.CoreCompileInputs.cach
 C:\S2AM\Arduino\QRCodeWebcam\Login\obj\Debug\Login.csproj.CopyComplete
 C:\S2AM\Arduino\QRCodeWebcam\Login\obj\Debug\Login.exe
 C:\S2AM\Arduino\QRCodeWebcam\Login\obj\Debug\Login.pdb
+C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.dll
+C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.xml

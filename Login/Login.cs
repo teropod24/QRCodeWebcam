@@ -5,6 +5,7 @@ using System.IO.Ports;
 using System.Windows.Forms;
 using QRCodeWebcam;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace Login
 {
@@ -12,6 +13,7 @@ namespace Login
     {
         SerialPort ArduinoPort = new SerialPort();
         string pasword;
+        private int passwordcadena = 6;
 
 
         public Login()
@@ -43,7 +45,7 @@ namespace Login
         {
             ContecarArduino();
 
-            pasword = GenerarContraseña();
+            pasword = GenerarContraseña(passwordcadena);
             lbl_codigo.Text = pasword;
 
             EnviarPasswordAlArduino(pasword);
@@ -95,19 +97,23 @@ namespace Login
             }
         }
 
-        private string GenerarContraseña()
+        private string GenerarContraseña(int longitud)
         {
-            string pass = "";
-            int min = 0;
-            int max = 9;
-            Random rmd = new Random();
-
-            for (int i = 0; i < 6; i++)
+            using (RNGCryptoServiceProvider rngCrypto = new RNGCryptoServiceProvider())
             {
-                pass += rmd.Next(min, max);
-            }
+                byte[] valor = new byte[4];
+                rngCrypto.GetBytes(valor);
 
-            return pass;
+                int i = BitConverter.ToInt32(valor,0);
+
+                i = Math.Abs(i);
+
+                string val = i.ToString();
+
+                val = val.Substring(0, longitud);
+
+                return val;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
