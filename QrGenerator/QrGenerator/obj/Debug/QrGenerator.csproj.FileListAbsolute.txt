@@ -22,3 +22,15 @@ C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.cspro
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.exe
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.pdb
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.QRGeneration.resources
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\QrGenerator.exe.config
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\QrGenerator.exe
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\QrGenerator.pdb
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\QRCoder.dll
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.csproj.AssemblyReference.cache
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.QRGeneration.resources
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.Properties.Resources.resources
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.csproj.GenerateResource.cache
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.csproj.CoreCompileInputs.cache
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.csproj.CopyComplete
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.exe
+C:\DAM2n\Proyecto\QRCodeWebcam\QrGenerator\QrGenerator\obj\Debug\QrGenerator.pdb

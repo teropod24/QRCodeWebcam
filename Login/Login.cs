@@ -13,7 +13,6 @@ namespace Login
         SerialPort ArduinoPort = new SerialPort();
         string pasword;
 
-
         public Login()
         {
 
@@ -43,7 +42,7 @@ namespace Login
         {
             ContecarArduino();
 
-            pasword = GenerarContraseña();
+            pasword = GenerarContraseña(6);
             lbl_codigo.Text = pasword;
 
             EnviarPasswordAlArduino(pasword);
@@ -95,14 +94,14 @@ namespace Login
             }
         }
 
-        private string GenerarContraseña()
+        public string GenerarContraseña(int cantidadNums)
         {
             string pass = "";
             int min = 0;
             int max = 9;
             Random rmd = new Random();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < cantidadNums; i++)
             {
                 pass += rmd.Next(min, max);
             }
