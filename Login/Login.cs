@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using QRCodeWebcam;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using Cordenadas;
 
 namespace Login
 {
@@ -15,6 +16,7 @@ namespace Login
         string pasword;
         private int passwordcadena = 6;
 
+        private Coords coordsForm;
 
         public Login()
         {
@@ -22,24 +24,26 @@ namespace Login
             InitializeComponent();
 
             ArduinoPort = new SerialPort();
+            coordsForm = new Coords();
+            coordsForm.Show(); // Asegúrate de mostrar el formulario de coordenadas
         }
 
         private void ContecarArduino()
         {
-            if (SerialPort.GetPortNames().Length > 0)
-            {
-                ArduinoPort.PortName = "COM6";
-                ArduinoPort.BaudRate = 9600;
+            //if (SerialPort.GetPortNames().Length > 0)
+            //{
+            //    ArduinoPort.PortName = "COM6";
+            //    ArduinoPort.BaudRate = 9600;
 
-                ArduinoPort.DataReceived += new SerialDataReceivedEventHandler(DatosRecibidos);
-                ArduinoPort.Open();
-                ArduinoPort.WriteLine("S");
+            //    ArduinoPort.DataReceived += new SerialDataReceivedEventHandler(DatosRecibidos);
+            //    ArduinoPort.Open();
+            //    ArduinoPort.WriteLine("S");
 
-            }
-            else
-            {
-                MessageBox.Show("¡No estas conectado!");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("¡No estas conectado!");
+            //}
         }
         private void Login_Load(object sender, EventArgs e)
         {
@@ -49,6 +53,8 @@ namespace Login
             lbl_codigo.Text = pasword;
 
             EnviarPasswordAlArduino(pasword);
+
+            GenerarCoordenadas();
         }
 
         private void EnviarPasswordAlArduino(string password)
@@ -116,9 +122,60 @@ namespace Login
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public string GenerarCoordenadas()
         {
-            ContecarArduino();
+            string coords;
+
+            Random random = new Random();
+
+            char letter = (char)random.Next('A', 'D' + 1);
+            int number = random.Next(1, 5);
+            coords = $"{letter}{number}";
+
+            lbl_generate_Coords.Text = coords;
+
+            return coords;
+        }
+
+        private void ValidarCoordenada(string coordIngresada, int valorIngresado)
+        {
+            if (coordsForm.CoordenadasValores.Count == 0)
+            {
+                MessageBox.Show("No se han generado coordenadas. Por favor, genera las coordenadas primero.");
+                return;
+            }
+
+            if (coordsForm.CoordenadasValores.TryGetValue(coordIngresada, out int valorEsperado))
+            {
+                if (valorEsperado == valorIngresado)
+                {
+                    MessageBox.Show($"¡Coordenada válida! Valor esperado: {valorEsperado}");
+                }
+                else
+                {
+                    MessageBox.Show($"El valor ingresado ({valorIngresado}) no coincide con la coordenada. Valor esperado: {valorEsperado}");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Coordenada no encontrada: {coordIngresada}");
+            }
+        }
+
+
+
+        private void btn_validar_coord_Click(object sender, EventArgs e)
+        {
+            string coordIngresada = lbl_generate_Coords.Text.ToUpper(); // Coordenada generada
+            if (int.TryParse(txt_coords.Text, out int valorIngresado)) // Valor ingresado
+            {
+                // Validar si la coordenada generada existe y es válida
+                ValidarCoordenada(coordIngresada, valorIngresado);
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingresa un valor numérico válido.");
+            }
         }
     }
 }

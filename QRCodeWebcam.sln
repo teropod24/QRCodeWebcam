@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator", "QrGenerator\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cordenadas", "Cordenadas\Cordenadas.csproj", "{8A53B907-233E-487E-891C-D521DADFB7ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F4D8484-61C4-49A4-8CB2-4C8EA8E8BE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A53B907-233E-487E-891C-D521DADFB7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A53B907-233E-487E-891C-D521DADFB7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A53B907-233E-487E-891C-D521DADFB7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A53B907-233E-487E-891C-D521DADFB7ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
