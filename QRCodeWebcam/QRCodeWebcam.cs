@@ -18,13 +18,14 @@ namespace QRCodeWebcam
     public partial class QRCodeWebcam : Form
     {
         int[] codigo;
-
+        private DateTime tiempoIncial;
         private int contador = 60000;
 
         public QRCodeWebcam()
         {
             InitializeComponent();
             codigo = GenerarNumerosAleatorios(6, 0, 9);
+
         }
 
         FilterInfoCollection filterInfoCollection;
@@ -45,6 +46,7 @@ namespace QRCodeWebcam
             captureDevice.NewFrame += CaptureDevice_NewFrame;
             captureDevice.Start();
             timer1.Interval = 10;
+            tiempoIncial = DateTime.Now;
             timer1.Start();
         }
 
@@ -63,6 +65,12 @@ namespace QRCodeWebcam
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
+            TimeSpan timeTranscurido = DateTime.Now - tiempoIncial;
+            int miliseg = (int)timeTranscurido.TotalMilliseconds;
+
+            contador = Math.Max(contador - miliseg, 0);
+
             if (pictureBox1.Image != null)
             {
                 BarcodeReader barcodeReader = new BarcodeReader();

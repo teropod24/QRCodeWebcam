@@ -7,6 +7,8 @@ using QRCodeWebcam;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using Cordenadas;
+using QrGenerator;
+using ZXing;
 
 namespace Login
 {
@@ -15,7 +17,6 @@ namespace Login
         SerialPort ArduinoPort = new SerialPort();
         string pasword;
         private int passwordcadena = 6;
-
         private Coords coordsForm;
 
         public Login()
@@ -175,6 +176,38 @@ namespace Login
             else
             {
                 MessageBox.Show("Por favor ingresa un valor numérico válido.");
+            }
+        }
+
+        private DateTime tiempoIncial;
+        private int contador = 600000;
+        private void btm_iniciar_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 10;
+            tiempoIncial = DateTime.Now;
+            timer1.Start();
+
+            txt_coords.Enabled = true;
+            txt_pass.Enabled = true;
+            btn_validar_coord.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan timeTranscurido = DateTime.Now - tiempoIncial;
+            int miliseg = (int)timeTranscurido.TotalMilliseconds;
+
+            contador = Math.Max(contador - miliseg, 0);
+
+            int segundos = contador / 1000;
+            int milisegundos = (contador % 1000) / 10;
+
+            lbl_contador.Text = $"{segundos:D2}:{milisegundos:D2}";
+
+            if (contador <= 0)
+            {
+                lbl_contador.Text = "00:000";
+                timer1.Stop();
             }
         }
     }

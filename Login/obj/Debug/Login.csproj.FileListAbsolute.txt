@@ -27,3 +27,5 @@ C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.xml
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\Cordenadas.pdb
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\Cordenadas.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.presentation.dll
+C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.presentation.xml
