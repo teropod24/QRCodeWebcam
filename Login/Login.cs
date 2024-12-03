@@ -10,15 +10,15 @@ namespace Login
 {
     public partial class Login : Form
     {
+        private bool startBtn = false;
+        private int contador = 60000;
         SerialPort ArduinoPort = new SerialPort();
+        private DateTime tiempoInicio;
         string pasword;
 
         public Login()
         {
-
             InitializeComponent();
-
-            ArduinoPort = new SerialPort();
         }
 
         private void ContecarArduino()
@@ -31,21 +31,11 @@ namespace Login
                 ArduinoPort.DataReceived += new SerialDataReceivedEventHandler(DatosRecibidos);
                 ArduinoPort.Open();
                 ArduinoPort.WriteLine("S");
-
             }
             else
             {
                 MessageBox.Show("¡No estas conectado!");
             }
-        }
-        private void Login_Load(object sender, EventArgs e)
-        {
-            ContecarArduino();
-
-            pasword = GenerarContraseña(6);
-            lbl_codigo.Text = pasword;
-
-            EnviarPasswordAlArduino(pasword);
         }
 
         private void EnviarPasswordAlArduino(string password)
@@ -109,9 +99,42 @@ namespace Login
             return pass;
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan tiempoTranscurrido = DateTime.Now - tiempoInicio;
+            int milisegundosTranscurridos = (int)tiempoTranscurrido.TotalMilliseconds;
+
+            contador = Math.Max(60000 - milisegundosTranscurridos, 0);
+
+            int segundos = contador / 1000;
+            int milisegundos = (contador % 1000) / 10;
+
+            contadorTimer.Text = $"{segundos:D2}:{milisegundos:D2}";
+
+            if (contador <= 0)
+            {
+                timer1.Stop();
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ContecarArduino();
+            if (!startBtn)
+            {
+                ContecarArduino();
+
+                pasword = GenerarContraseña(6);
+                lbl_codigo.Text = pasword;
+
+                EnviarPasswordAlArduino(pasword);
+
+                gbx_verification.Enabled = true;
+                startBtn = true;
+                ArduinoPort = new SerialPort();
+                timer1.Interval = 10;
+                tiempoInicio = DateTime.Now;
+                timer1.Start();
+            }
         }
     }
 }

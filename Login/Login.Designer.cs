@@ -29,6 +29,7 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.gbx_verification = new System.Windows.Forms.GroupBox();
@@ -36,7 +37,9 @@ namespace Login
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_otp_code = new System.Windows.Forms.Label();
             this.lbl_authentification = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contadorTimer = new System.Windows.Forms.Label();
+            this.iniciarBtn = new System.Windows.Forms.Button();
             this.gbx_verification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +58,8 @@ namespace Login
             this.gbx_verification.Controls.Add(this.lbl_otp_code);
             this.gbx_verification.Controls.Add(this.lbl_authentification);
             this.gbx_verification.Controls.Add(this.txt_pass);
-            this.gbx_verification.Location = new System.Drawing.Point(83, 65);
+            this.gbx_verification.Enabled = false;
+            this.gbx_verification.Location = new System.Drawing.Point(56, 122);
             this.gbx_verification.Name = "gbx_verification";
             this.gbx_verification.Size = new System.Drawing.Size(634, 188);
             this.gbx_verification.TabIndex = 2;
@@ -98,30 +102,45 @@ namespace Login
             this.lbl_authentification.TabIndex = 1;
             this.lbl_authentification.Text = "Base Authntification:";
             // 
-            // button1
+            // timer1
             // 
-            this.button1.Location = new System.Drawing.Point(438, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // contadorTimer
+            // 
+            this.contadorTimer.AutoSize = true;
+            this.contadorTimer.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contadorTimer.Location = new System.Drawing.Point(12, 9);
+            this.contadorTimer.Name = "contadorTimer";
+            this.contadorTimer.Size = new System.Drawing.Size(100, 35);
+            this.contadorTimer.TabIndex = 4;
+            this.contadorTimer.Text = "30:00";
+            // 
+            // iniciarBtn
+            // 
+            this.iniciarBtn.Location = new System.Drawing.Point(615, 93);
+            this.iniciarBtn.Name = "iniciarBtn";
+            this.iniciarBtn.Size = new System.Drawing.Size(75, 23);
+            this.iniciarBtn.TabIndex = 5;
+            this.iniciarBtn.Text = "Iniciar";
+            this.iniciarBtn.UseVisualStyleBackColor = true;
+            this.iniciarBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 327);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(752, 322);
+            this.Controls.Add(this.iniciarBtn);
+            this.Controls.Add(this.contadorTimer);
             this.Controls.Add(this.gbx_verification);
             this.Name = "Login";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.gbx_verification.ResumeLayout(false);
             this.gbx_verification.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,7 +152,9 @@ namespace Login
         private System.Windows.Forms.Label lbl_authentification;
         private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label contadorTimer;
+        private System.Windows.Forms.Button iniciarBtn;
     }
 }
 
