@@ -10,8 +10,8 @@ using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
-using QrGenerator;
 using System.Security.Cryptography;
+using Cordenadas;
 
 namespace QRCodeWebcam
 {
@@ -32,6 +32,7 @@ namespace QRCodeWebcam
         VideoCaptureDevice captureDevice;
         private void Form1_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filterInfoCollection)
             {
@@ -61,6 +62,10 @@ namespace QRCodeWebcam
             {
                 captureDevice.Stop();
             }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -78,12 +83,12 @@ namespace QRCodeWebcam
 
                 if (result != null)
                 {
-                    txt_QRCode.Text = result.ToString();
-                    timer1.Stop();
-                    if (captureDevice.IsRunning)
-                    {
-                        captureDevice.Stop();
-                    }
+                    //txt_QRCode.Text = result.ToString();
+                    //timer1.Stop();
+                    //if (captureDevice.IsRunning)
+                    //{
+                    //    captureDevice.Stop();
+                    //}
                 }
             }
 
@@ -130,9 +135,7 @@ namespace QRCodeWebcam
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QRGeneration qr = new QRGeneration();
-
-            qr.Show();
+            this.Close();
         }
     }
 }

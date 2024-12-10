@@ -13,7 +13,10 @@ namespace Cordenadas
 {
     public partial class Coords : Form
     {
+
         private string Coordenadas;
+        private DateTime tiempoIncial;
+        private int contador = 10000;
         public Dictionary<string, int> CoordenadasValores { get; private set; } = new Dictionary<string, int>();
 
         public string coordenadas
@@ -26,14 +29,11 @@ namespace Cordenadas
         public Coords()
         {
             InitializeComponent();
+            //timer1.Interval = 10;
+            //tiempoIncial = DateTime.Now;
+            //timer1.Start();
         }
-
-        private void btn_show_Click(object sender, EventArgs e)
-        {
-            tbl_cordenadas.Show();
-        }
-
-        public void btn_generate_Click(object sender, EventArgs e)
+        private void Coords_Load(object sender, EventArgs e)
         {
             CoordenadasValores.Clear();
 
@@ -66,6 +66,22 @@ namespace Cordenadas
                     CoordenadasValores[coord] = number;
                 }
             }
+
+            tbl_cordenadas.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan tiempoTranscurrido = DateTime.Now - tiempoIncial;
+            int milisegundosRestantes = contador - (int)tiempoTranscurrido.TotalMilliseconds;
+
+            if (milisegundosRestantes <= 0)
+            {
+                timer1.Stop();
+                Close();
+            }
+        }
+
     }
 }
+

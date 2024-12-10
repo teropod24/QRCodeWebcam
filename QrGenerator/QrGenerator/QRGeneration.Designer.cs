@@ -33,12 +33,13 @@ namespace QrGenerator
             this.label1 = new System.Windows.Forms.Label();
             this.pic = new System.Windows.Forms.PictureBox();
             this.txtQrCode = new System.Windows.Forms.TextBox();
+            this.btm_next = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 412);
+            this.button1.Location = new System.Drawing.Point(227, 412);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 0;
@@ -73,17 +74,29 @@ namespace QrGenerator
             this.txtQrCode.Size = new System.Drawing.Size(428, 65);
             this.txtQrCode.TabIndex = 3;
             // 
+            // btm_next
+            // 
+            this.btm_next.Location = new System.Drawing.Point(342, 412);
+            this.btm_next.Name = "btm_next";
+            this.btm_next.Size = new System.Drawing.Size(109, 23);
+            this.btm_next.TabIndex = 4;
+            this.btm_next.Text = "Validated QR";
+            this.btm_next.UseVisualStyleBackColor = true;
+            this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
+            // 
             // QRGeneration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 483);
+            this.Controls.Add(this.btm_next);
             this.Controls.Add(this.txtQrCode);
             this.Controls.Add(this.pic);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "QRGeneration";
             this.Text = "QR Generation";
+            this.Load += new System.EventHandler(this.QRGeneration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,6 +109,7 @@ namespace QrGenerator
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.TextBox txtQrCode;
+        private System.Windows.Forms.Button btm_next;
     }
 }
 

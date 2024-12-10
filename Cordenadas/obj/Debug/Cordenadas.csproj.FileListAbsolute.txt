@@ -1,10 +1,10 @@
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.exe.config
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.pdb
-C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.AssemblyReference.cache
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.Coords.resources
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.Properties.Resources.resources
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.GenerateResource.cache
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.CoreCompileInputs.cache
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.pdb
+C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.AssemblyReference.cache

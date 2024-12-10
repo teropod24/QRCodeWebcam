@@ -47,6 +47,7 @@ namespace Login
             this.btm_iniciar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_contador = new System.Windows.Forms.Label();
+            this.btm_next = new System.Windows.Forms.Button();
             this.gbx_verification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_coords.SuspendLayout();
@@ -204,18 +205,28 @@ namespace Login
             this.lbl_contador.TabIndex = 5;
             this.lbl_contador.Text = "Contador:";
             // 
+            // btm_next
+            // 
+            this.btm_next.Location = new System.Drawing.Point(109, 68);
+            this.btm_next.Name = "btm_next";
+            this.btm_next.Size = new System.Drawing.Size(91, 40);
+            this.btm_next.TabIndex = 6;
+            this.btm_next.Text = "Next";
+            this.btm_next.UseVisualStyleBackColor = true;
+            this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 609);
+            this.Controls.Add(this.btm_next);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
             this.Controls.Add(this.gbx_coords);
             this.Controls.Add(this.gbx_verification);
             this.Name = "Login";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.gbx_verification.ResumeLayout(false);
             this.gbx_verification.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -245,6 +256,7 @@ namespace Login
         private System.Windows.Forms.Button btm_iniciar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_contador;
+        private System.Windows.Forms.Button btm_next;
     }
 }
 

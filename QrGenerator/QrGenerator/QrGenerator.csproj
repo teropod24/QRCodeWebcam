@@ -86,5 +86,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QRCodeWebcam\QRCodeWebcam.csproj">
+      <Project>{8bd5e0fe-67d3-49da-8df4-28cfb65af5a5}</Project>
+      <Name>QRCodeWebcam</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

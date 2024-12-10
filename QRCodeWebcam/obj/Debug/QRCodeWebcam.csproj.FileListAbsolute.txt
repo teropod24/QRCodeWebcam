@@ -19,7 +19,6 @@ C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\zxing.presentation.xml
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\obj\Debug\QRCodeWebcam.csproj.CopyComplete
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\obj\Debug\QRCodeWebcam.csproj.AssemblyReference.cache
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\obj\Debug\QRCodeWebcam.QRCodeWebcam.resources
-C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\QrGenerator.exe
-C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\QRCoder.dll
-C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\QrGenerator.pdb
-C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\QrGenerator.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.exe
+C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.pdb
+C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.exe.config

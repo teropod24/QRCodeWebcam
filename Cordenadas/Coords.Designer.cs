@@ -29,8 +29,7 @@ namespace Cordenadas
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_generate = new System.Windows.Forms.Button();
-            this.btn_show = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.tbl_cordenadas = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_b = new System.Windows.Forms.Label();
             this.lbl_c = new System.Windows.Forms.Label();
@@ -41,30 +40,9 @@ namespace Cordenadas
             this.lbl_tres = new System.Windows.Forms.Label();
             this.lbl_cuatro = new System.Windows.Forms.Label();
             this.lbl_cinco = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbl_cordenadas.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_generate
-            // 
-            this.btn_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_generate.Location = new System.Drawing.Point(186, 46);
-            this.btn_generate.Name = "btn_generate";
-            this.btn_generate.Size = new System.Drawing.Size(103, 33);
-            this.btn_generate.TabIndex = 0;
-            this.btn_generate.Text = "Generate";
-            this.btn_generate.UseVisualStyleBackColor = true;
-            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
-            // 
-            // btn_show
-            // 
-            this.btn_show.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_show.Location = new System.Drawing.Point(431, 46);
-            this.btn_show.Name = "btn_show";
-            this.btn_show.Size = new System.Drawing.Size(103, 33);
-            this.btn_show.TabIndex = 1;
-            this.btn_show.Text = "Show";
-            this.btn_show.UseVisualStyleBackColor = true;
-            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
             // 
             // tbl_cordenadas
             // 
@@ -205,16 +183,19 @@ namespace Cordenadas
             this.lbl_cinco.Text = "5";
             this.lbl_cinco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Coords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 404);
             this.Controls.Add(this.tbl_cordenadas);
-            this.Controls.Add(this.btn_show);
-            this.Controls.Add(this.btn_generate);
             this.Name = "Coords";
             this.Text = "Coordenadas";
+            this.Load += new System.EventHandler(this.Coords_Load);
             this.tbl_cordenadas.ResumeLayout(false);
             this.tbl_cordenadas.PerformLayout();
             this.ResumeLayout(false);
@@ -222,9 +203,6 @@ namespace Cordenadas
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_generate;
-        private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.TableLayoutPanel tbl_cordenadas;
         private System.Windows.Forms.Label lbl_b;
         private System.Windows.Forms.Label lbl_c;
@@ -235,6 +213,7 @@ namespace Cordenadas
         private System.Windows.Forms.Label lbl_tres;
         private System.Windows.Forms.Label lbl_cuatro;
         private System.Windows.Forms.Label lbl_cinco;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
