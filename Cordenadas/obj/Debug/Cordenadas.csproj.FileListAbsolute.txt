@@ -8,3 +8,13 @@ C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.CoreCompileI
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.pdb
 C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.AssemblyReference.cache
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.exe.config
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.exe
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\bin\Debug\Cordenadas.pdb
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.AssemblyReference.cache
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.Coords.resources
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.Properties.Resources.resources
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.GenerateResource.cache
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.CoreCompileInputs.cache
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.exe
+C:\Users\enric\Documents\Github2\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.pdb

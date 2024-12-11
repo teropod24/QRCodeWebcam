@@ -57,14 +57,18 @@ namespace Login
             // 
             // txt_pass
             // 
+            this.txt_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txt_pass.Enabled = false;
+            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_pass.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_pass.Location = new System.Drawing.Point(228, 133);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(204, 22);
+            this.txt_pass.Size = new System.Drawing.Size(204, 26);
             this.txt_pass.TabIndex = 0;
             // 
             // gbx_verification
             // 
+            this.gbx_verification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.gbx_verification.Controls.Add(this.pictureBox1);
             this.gbx_verification.Controls.Add(this.lbl_codigo);
             this.gbx_verification.Controls.Add(this.lbl_otp_code);
@@ -89,6 +93,7 @@ namespace Login
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
+            this.lbl_codigo.ForeColor = System.Drawing.Color.Orange;
             this.lbl_codigo.Location = new System.Drawing.Point(225, 102);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(26, 17);
@@ -98,6 +103,7 @@ namespace Login
             // lbl_otp_code
             // 
             this.lbl_otp_code.AutoSize = true;
+            this.lbl_otp_code.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_otp_code.Location = new System.Drawing.Point(92, 133);
             this.lbl_otp_code.Name = "lbl_otp_code";
             this.lbl_otp_code.Size = new System.Drawing.Size(78, 17);
@@ -107,6 +113,7 @@ namespace Login
             // lbl_authentification
             // 
             this.lbl_authentification.AutoSize = true;
+            this.lbl_authentification.ForeColor = System.Drawing.Color.Orange;
             this.lbl_authentification.Location = new System.Drawing.Point(45, 61);
             this.lbl_authentification.Name = "lbl_authentification";
             this.lbl_authentification.Size = new System.Drawing.Size(145, 17);
@@ -115,6 +122,7 @@ namespace Login
             // 
             // gbx_coords
             // 
+            this.gbx_coords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.gbx_coords.Controls.Add(this.btn_validar_coord);
             this.gbx_coords.Controls.Add(this.pictureBox2);
             this.gbx_coords.Controls.Add(this.lbl_generate_Coords);
@@ -129,14 +137,16 @@ namespace Login
             // 
             // btn_validar_coord
             // 
+            this.btn_validar_coord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btn_validar_coord.Enabled = false;
+            this.btn_validar_coord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_validar_coord.ForeColor = System.Drawing.Color.Orange;
             this.btn_validar_coord.Location = new System.Drawing.Point(299, 96);
             this.btn_validar_coord.Name = "btn_validar_coord";
-            this.btn_validar_coord.Size = new System.Drawing.Size(75, 23);
+            this.btn_validar_coord.Size = new System.Drawing.Size(75, 31);
             this.btn_validar_coord.TabIndex = 5;
             this.btn_validar_coord.Text = "Validar";
-            this.btn_validar_coord.UseVisualStyleBackColor = true;
-            this.btn_validar_coord.Click += new System.EventHandler(this.btn_validar_coord_Click);
+            this.btn_validar_coord.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -151,6 +161,7 @@ namespace Login
             // lbl_generate_Coords
             // 
             this.lbl_generate_Coords.AutoSize = true;
+            this.lbl_generate_Coords.ForeColor = System.Drawing.Color.Orange;
             this.lbl_generate_Coords.Location = new System.Drawing.Point(225, 102);
             this.lbl_generate_Coords.Name = "lbl_generate_Coords";
             this.lbl_generate_Coords.Size = new System.Drawing.Size(26, 17);
@@ -160,6 +171,7 @@ namespace Login
             // lbl_coords
             // 
             this.lbl_coords.AutoSize = true;
+            this.lbl_coords.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_coords.Location = new System.Drawing.Point(56, 133);
             this.lbl_coords.Name = "lbl_coords";
             this.lbl_coords.Size = new System.Drawing.Size(134, 17);
@@ -169,6 +181,7 @@ namespace Login
             // lbl_central
             // 
             this.lbl_central.AutoSize = true;
+            this.lbl_central.ForeColor = System.Drawing.Color.Orange;
             this.lbl_central.Location = new System.Drawing.Point(45, 61);
             this.lbl_central.Name = "lbl_central";
             this.lbl_central.Size = new System.Drawing.Size(158, 17);
@@ -177,20 +190,25 @@ namespace Login
             // 
             // txt_coords
             // 
+            this.txt_coords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txt_coords.Enabled = false;
+            this.txt_coords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_coords.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_coords.Location = new System.Drawing.Point(228, 133);
             this.txt_coords.Name = "txt_coords";
-            this.txt_coords.Size = new System.Drawing.Size(204, 22);
+            this.txt_coords.Size = new System.Drawing.Size(204, 26);
             this.txt_coords.TabIndex = 0;
             // 
             // btm_iniciar
             // 
+            this.btm_iniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_iniciar.ForeColor = System.Drawing.Color.LightGreen;
             this.btm_iniciar.Location = new System.Drawing.Point(12, 68);
             this.btm_iniciar.Name = "btm_iniciar";
             this.btm_iniciar.Size = new System.Drawing.Size(91, 40);
             this.btm_iniciar.TabIndex = 4;
             this.btm_iniciar.Text = "Iniciar";
-            this.btm_iniciar.UseVisualStyleBackColor = true;
+            this.btm_iniciar.UseVisualStyleBackColor = false;
             this.btm_iniciar.Click += new System.EventHandler(this.btm_iniciar_Click);
             // 
             // timer1
@@ -200,6 +218,7 @@ namespace Login
             // lbl_contador
             // 
             this.lbl_contador.AutoSize = true;
+            this.lbl_contador.ForeColor = System.Drawing.Color.LightGreen;
             this.lbl_contador.Location = new System.Drawing.Point(12, 138);
             this.lbl_contador.Name = "lbl_contador";
             this.lbl_contador.Size = new System.Drawing.Size(70, 17);
@@ -208,12 +227,14 @@ namespace Login
             // 
             // btm_next
             // 
+            this.btm_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_next.ForeColor = System.Drawing.Color.LightGreen;
             this.btm_next.Location = new System.Drawing.Point(109, 68);
             this.btm_next.Name = "btm_next";
             this.btm_next.Size = new System.Drawing.Size(91, 40);
             this.btm_next.TabIndex = 6;
             this.btm_next.Text = "Next";
-            this.btm_next.UseVisualStyleBackColor = true;
+            this.btm_next.UseVisualStyleBackColor = false;
             this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
             // 
             // button1
@@ -230,6 +251,7 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(921, 609);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btm_next);
@@ -249,6 +271,7 @@ namespace Login
             this.PerformLayout();
 
         }
+
 
         #endregion
 
