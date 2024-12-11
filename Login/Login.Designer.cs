@@ -48,6 +48,7 @@ namespace Login
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_contador = new System.Windows.Forms.Label();
             this.btm_next = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbx_verification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_coords.SuspendLayout();
@@ -215,11 +216,22 @@ namespace Login
             this.btm_next.UseVisualStyleBackColor = true;
             this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(353, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 609);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btm_next);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
@@ -257,6 +269,7 @@ namespace Login
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_contador;
         private System.Windows.Forms.Button btm_next;
+        private System.Windows.Forms.Button button1;
     }
 }
 

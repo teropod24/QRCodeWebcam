@@ -23,7 +23,6 @@ namespace Login
         Coords coordsForm ;
         private DateTime tiempoIncial;
         private int contador = 60000;
-        public QRGeneration qRGeneration = new QRGeneration();
 
         public Login()
         {
@@ -88,6 +87,7 @@ namespace Login
                 if (passwordValido)
                 {
                     pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                    QRGeneration qRGeneration = new QRGeneration();
                     qRGeneration.Show();
                 }
                 else
@@ -193,7 +193,7 @@ namespace Login
                 timer1.Start();
 
                 string server = "smtp.gmail.com";
-                string to = "p8171843@gmail.com";
+                string to = "jx.paredes@sarria.salesians.cat";
                 string from = "p8171843@gmail.com";
                 MailMessage message = new MailMessage(from, to);
 
@@ -242,6 +242,35 @@ namespace Login
         {
             QRGeneration qRGeneration = new QRGeneration();
             qRGeneration.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string server = "smtp.gmail.com";
+            string to = "jx.paredes@sarria.salesians.cat";
+            string from = "p8171843@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+
+            message.Subject = "Using the new SMTP client.";
+            message.Body = $"First Order StarKiller Section\nWe send you a validation code (OTP - one time password) that has a validity periode of 1 minute\nThe introduction of the code in the system is mandatory so that you can authenticate and activate the weapon\n\nCODE: {lbl_codigo.Text}";
+
+            SmtpClient client = new SmtpClient(server)
+            {
+                Port = 587,
+                EnableSsl = true,
+                Credentials = new NetworkCredential(from, "umtt ctkz fqpz eowd")
+            };
+
+            try
+            {
+                client.Send(message);
+                MessageBox.Show("enviado");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("error");
+            }
         }
     }
 }
