@@ -17,7 +17,6 @@ namespace QrGenerator
         public QRGeneration()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,13 +29,9 @@ namespace QrGenerator
 
         private void btm_next_Click(object sender, EventArgs e)
         {
-            Close();
             QRCodeWebcam.QRCodeWebcam qRCodeWebcam = new QRCodeWebcam.QRCodeWebcam();
             qRCodeWebcam.Show();
-        }
-
-        private void QRGeneration_Load(object sender, EventArgs e)
-        {
+            Close();
         }
     }
 }

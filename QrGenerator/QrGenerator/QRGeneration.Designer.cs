@@ -96,7 +96,6 @@ namespace QrGenerator
             this.Controls.Add(this.button1);
             this.Name = "QRGeneration";
             this.Text = "QR Generation";
-            this.Load += new System.EventHandler(this.QRGeneration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,6 +31,8 @@ namespace Login
             coordsForm = new Coords();
             coordsForm.Show(); // Asegúrate de mostrar el formulario de coordenadas
             //qRGeneration.Show();
+
+            QRGeneration qRGeneration = new QRGeneration();
         }
 
         private void ContecarArduino()
@@ -61,39 +63,43 @@ namespace Login
 
         private void DatosRecibidos(object sender, SerialDataReceivedEventArgs e)
         {
-            string datosRecibidos = ArduinoPort.ReadLine().Trim();
-
-            string[] partes = datosRecibidos.Split(':');
-            if (partes.Length == 2)
+            try
             {
-                string contrasenaRecibida = partes[0];
-                bool passwordValido = partes[1] == "true";
+                string datosRecibidos = ArduinoPort.ReadLine().Trim();
+                string[] partes = datosRecibidos.Split(':');
 
-                MessageBox.Show("Contraseña recibida: " + contrasenaRecibida);
-                MessageBox.Show("Password válido: " + passwordValido);
-
-                if (txt_pass.InvokeRequired)
+                if (partes.Length == 2)
                 {
-                    txt_pass.Invoke(new MethodInvoker(delegate
+                    string contrasenaRecibida = partes[0];
+                    bool passwordValido = partes[1] == "true";
+
+                    Invoke(new Action(() =>
                     {
                         txt_pass.Text = contrasenaRecibida;
+
+                        if (passwordValido)
+                        {
+                            pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                            btm_next.Visible = true;
+                            MessageBox.Show("Access to QRGeneration accepted!");
+                            QRGeneration qrForm = new QRGeneration();
+                            qrForm.ShowDialog();
+                        }
+                        else
+                        {
+                            pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
+                            MessageBox.Show("Contraseña incorrecta.");
+                        }
                     }));
                 }
                 else
                 {
-                    txt_pass.Text = contrasenaRecibida;
+                    MessageBox.Show("Formato de datos incorrecto recibido desde el Arduino.");
                 }
-
-                if (passwordValido)
-                {
-                    pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
-                    QRGeneration qRGeneration = new QRGeneration();
-                    qRGeneration.Show();
-                }
-                else
-                {  
-                    pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al procesar los datos recibidos: {ex.Message}");
             }
         }
 
@@ -115,7 +121,6 @@ namespace Login
                 return val;
             }
         }
-
         public string GenerarCoordenadas()
         {
             string coords;
@@ -163,12 +168,12 @@ namespace Login
             {
                 // Validar si la coordenada generada existe y es válida
                 ValidarCoordenada(coordIngresada, valorIngresado);
-
-
+                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
             }
             else
             {
                 MessageBox.Show("Por favor ingresa un valor numérico válido.");
+                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
             }          
         }
         private void btm_iniciar_Click(object sender, EventArgs e)
@@ -193,7 +198,7 @@ namespace Login
                 timer1.Start();
 
                 string server = "smtp.gmail.com";
-                string to = "jx.paredes@sarria.salesians.cat";
+                string to = "p8171843@gmail.com";
                 string from = "p8171843@gmail.com";
                 MailMessage message = new MailMessage(from, to);
 
@@ -210,7 +215,6 @@ namespace Login
                 try
                 {
                     client.Send(message);
-                    MessageBox.Show("enviado");
                 }
                 catch (Exception)
                 {

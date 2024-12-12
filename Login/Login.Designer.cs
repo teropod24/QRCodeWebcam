@@ -214,6 +214,7 @@ namespace Login
             this.btm_next.TabIndex = 6;
             this.btm_next.Text = "Next";
             this.btm_next.UseVisualStyleBackColor = true;
+            this.btm_next.Visible = false;
             this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
             // 
             // button1
