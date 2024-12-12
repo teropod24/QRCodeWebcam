@@ -43,26 +43,33 @@ namespace QRCodeWebcam
             // 
             // btn_Start
             // 
-            this.btn_Start.Location = new System.Drawing.Point(547, 75);
+            this.btn_Start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btn_Start.Font = new System.Drawing.Font("Digital-7", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Start.ForeColor = System.Drawing.Color.LightGreen;
+            this.btn_Start.Location = new System.Drawing.Point(547, 59);
             this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(75, 27);
+            this.btn_Start.Size = new System.Drawing.Size(93, 43);
             this.btn_Start.TabIndex = 0;
             this.btn_Start.Text = "Start:";
-            this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.UseVisualStyleBackColor = false;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // lab_camera
             // 
             this.lab_camera.AutoSize = true;
+            this.lab_camera.Font = new System.Drawing.Font("Digital-7", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_camera.ForeColor = System.Drawing.Color.Orange;
             this.lab_camera.Location = new System.Drawing.Point(42, 30);
             this.lab_camera.Name = "lab_camera";
-            this.lab_camera.Size = new System.Drawing.Size(61, 17);
+            this.lab_camera.Size = new System.Drawing.Size(67, 21);
             this.lab_camera.TabIndex = 1;
             this.lab_camera.Text = "Camera:";
             // 
             // cbo_Device
             // 
+            this.cbo_Device.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.cbo_Device.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Device.ForeColor = System.Drawing.Color.LightGreen;
             this.cbo_Device.FormattingEnabled = true;
             this.cbo_Device.Location = new System.Drawing.Point(109, 27);
             this.cbo_Device.Name = "cbo_Device";
@@ -80,6 +87,8 @@ namespace QRCodeWebcam
             // 
             // txt_QRCode
             // 
+            this.txt_QRCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.txt_QRCode.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_QRCode.Location = new System.Drawing.Point(547, 108);
             this.txt_QRCode.Multiline = true;
             this.txt_QRCode.Name = "txt_QRCode";
@@ -95,26 +104,32 @@ namespace QRCodeWebcam
             // lab_timer
             // 
             this.lab_timer.AutoSize = true;
+            this.lab_timer.Font = new System.Drawing.Font("Digital-7", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_timer.ForeColor = System.Drawing.Color.Orange;
             this.lab_timer.Location = new System.Drawing.Point(544, 320);
             this.lab_timer.Name = "lab_timer";
-            this.lab_timer.Size = new System.Drawing.Size(68, 17);
+            this.lab_timer.Size = new System.Drawing.Size(85, 21);
             this.lab_timer.TabIndex = 5;
             this.lab_timer.Text = "contador:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(643, 75);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.Font = new System.Drawing.Font("Digital-7", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightGreen;
+            this.button1.Location = new System.Drawing.Point(646, 59);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 27);
+            this.button1.Size = new System.Drawing.Size(215, 43);
             this.button1.TabIndex = 6;
             this.button1.Text = "Coord";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QRCodeWebcam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1049, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lab_timer);
@@ -123,6 +138,7 @@ namespace QRCodeWebcam
             this.Controls.Add(this.cbo_Device);
             this.Controls.Add(this.lab_camera);
             this.Controls.Add(this.btn_Start);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QRCodeWebcam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QR Code";
@@ -133,6 +149,7 @@ namespace QRCodeWebcam
             this.PerformLayout();
 
         }
+
 
         #endregion
 

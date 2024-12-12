@@ -93,30 +93,33 @@ namespace Login
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
+            this.lbl_codigo.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.ForeColor = System.Drawing.Color.Orange;
             this.lbl_codigo.Location = new System.Drawing.Point(225, 102);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(26, 17);
+            this.lbl_codigo.Size = new System.Drawing.Size(21, 15);
             this.lbl_codigo.TabIndex = 3;
             this.lbl_codigo.Text = "XX";
             // 
             // lbl_otp_code
             // 
             this.lbl_otp_code.AutoSize = true;
+            this.lbl_otp_code.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_otp_code.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_otp_code.Location = new System.Drawing.Point(92, 133);
             this.lbl_otp_code.Name = "lbl_otp_code";
-            this.lbl_otp_code.Size = new System.Drawing.Size(78, 17);
+            this.lbl_otp_code.Size = new System.Drawing.Size(60, 15);
             this.lbl_otp_code.TabIndex = 2;
             this.lbl_otp_code.Text = "OTP Code:";
             // 
             // lbl_authentification
             // 
             this.lbl_authentification.AutoSize = true;
+            this.lbl_authentification.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_authentification.ForeColor = System.Drawing.Color.Orange;
             this.lbl_authentification.Location = new System.Drawing.Point(45, 61);
             this.lbl_authentification.Name = "lbl_authentification";
-            this.lbl_authentification.Size = new System.Drawing.Size(145, 17);
+            this.lbl_authentification.Size = new System.Drawing.Size(134, 15);
             this.lbl_authentification.TabIndex = 1;
             this.lbl_authentification.Text = "Base Authentification:";
             // 
@@ -131,7 +134,7 @@ namespace Login
             this.gbx_coords.Controls.Add(this.txt_coords);
             this.gbx_coords.Location = new System.Drawing.Point(226, 288);
             this.gbx_coords.Name = "gbx_coords";
-            this.gbx_coords.Size = new System.Drawing.Size(634, 188);
+            this.gbx_coords.Size = new System.Drawing.Size(644, 186);
             this.gbx_coords.TabIndex = 3;
             this.gbx_coords.TabStop = false;
             // 
@@ -140,6 +143,7 @@ namespace Login
             this.btn_validar_coord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btn_validar_coord.Enabled = false;
             this.btn_validar_coord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_validar_coord.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_validar_coord.ForeColor = System.Drawing.Color.Orange;
             this.btn_validar_coord.Location = new System.Drawing.Point(299, 96);
             this.btn_validar_coord.Name = "btn_validar_coord";
@@ -161,30 +165,33 @@ namespace Login
             // lbl_generate_Coords
             // 
             this.lbl_generate_Coords.AutoSize = true;
+            this.lbl_generate_Coords.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_generate_Coords.ForeColor = System.Drawing.Color.Orange;
             this.lbl_generate_Coords.Location = new System.Drawing.Point(225, 102);
             this.lbl_generate_Coords.Name = "lbl_generate_Coords";
-            this.lbl_generate_Coords.Size = new System.Drawing.Size(26, 17);
+            this.lbl_generate_Coords.Size = new System.Drawing.Size(21, 15);
             this.lbl_generate_Coords.TabIndex = 3;
             this.lbl_generate_Coords.Text = "XX";
             // 
             // lbl_coords
             // 
             this.lbl_coords.AutoSize = true;
+            this.lbl_coords.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_coords.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_coords.Location = new System.Drawing.Point(56, 133);
             this.lbl_coords.Name = "lbl_coords";
-            this.lbl_coords.Size = new System.Drawing.Size(134, 17);
+            this.lbl_coords.Size = new System.Drawing.Size(114, 15);
             this.lbl_coords.TabIndex = 2;
             this.lbl_coords.Text = "Code Coordenadas:";
             // 
             // lbl_central
             // 
             this.lbl_central.AutoSize = true;
+            this.lbl_central.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_central.ForeColor = System.Drawing.Color.Orange;
             this.lbl_central.Location = new System.Drawing.Point(45, 61);
             this.lbl_central.Name = "lbl_central";
-            this.lbl_central.Size = new System.Drawing.Size(158, 17);
+            this.lbl_central.Size = new System.Drawing.Size(154, 15);
             this.lbl_central.TabIndex = 1;
             this.lbl_central.Text = "Central Authentification:";
             // 
@@ -202,6 +209,7 @@ namespace Login
             // btm_iniciar
             // 
             this.btm_iniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_iniciar.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btm_iniciar.ForeColor = System.Drawing.Color.LightGreen;
             this.btm_iniciar.Location = new System.Drawing.Point(12, 68);
             this.btm_iniciar.Name = "btm_iniciar";
@@ -218,16 +226,18 @@ namespace Login
             // lbl_contador
             // 
             this.lbl_contador.AutoSize = true;
+            this.lbl_contador.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_contador.ForeColor = System.Drawing.Color.LightGreen;
             this.lbl_contador.Location = new System.Drawing.Point(12, 138);
             this.lbl_contador.Name = "lbl_contador";
-            this.lbl_contador.Size = new System.Drawing.Size(70, 17);
+            this.lbl_contador.Size = new System.Drawing.Size(64, 15);
             this.lbl_contador.TabIndex = 5;
             this.lbl_contador.Text = "Contador:";
             // 
             // btm_next
             // 
             this.btm_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_next.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btm_next.ForeColor = System.Drawing.Color.LightGreen;
             this.btm_next.Location = new System.Drawing.Point(109, 68);
             this.btm_next.Name = "btm_next";
@@ -252,13 +262,14 @@ namespace Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(921, 609);
+            this.ClientSize = new System.Drawing.Size(937, 535);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btm_next);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
             this.Controls.Add(this.gbx_coords);
             this.Controls.Add(this.gbx_verification);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Text = "Form1";
             this.gbx_verification.ResumeLayout(false);
