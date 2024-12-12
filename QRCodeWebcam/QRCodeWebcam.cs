@@ -18,8 +18,8 @@ namespace QRCodeWebcam
     public partial class QRCodeWebcam : Form
     {
         int[] codigo;
-        private DateTime tiempoIncial;
-        private int contador = 60000;
+        DateTime tiempoIncial;
+        int contador = 1000;
 
         public QRCodeWebcam()
         {
@@ -68,47 +68,6 @@ namespace QRCodeWebcam
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            TimeSpan timeTranscurido = DateTime.Now - tiempoIncial;
-            int miliseg = (int)timeTranscurido.TotalMilliseconds;
-
-            contador = Math.Max(contador - miliseg, 0);
-
-            if (pictureBox1.Image != null)
-            {
-                BarcodeReader barcodeReader = new BarcodeReader();
-                Result result = barcodeReader.Decode((Bitmap)pictureBox1.Image);
-
-                if (result != null)
-                {
-                    //txt_QRCode.Text = result.ToString();
-                    //timer1.Stop();
-                    //if (captureDevice.IsRunning)
-                    //{
-                    //    captureDevice.Stop();
-                    //}
-                }
-            }
-
-            if (contador <= 0)
-            {
-                lab_timer.Text = "00:000"; 
-                timer1.Stop();
-            }
-            else
-            {
-                contador -= 10;
-
-                int segundos = contador / 1000;
-                int milisegundos = (contador % 1000) / 10;
-
-                lab_timer.Text = $"{segundos:D2}:{milisegundos:D2}";
-            }
-
-        }
-
         private int[] GenerarNumerosAleatorios(int cantidad, int min, int max)
         {
             int[] codigo = new int[cantidad];
@@ -136,6 +95,31 @@ namespace QRCodeWebcam
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            TimeSpan timeTranscurido = DateTime.Now - tiempoIncial;
+            int miliseg = (int)timeTranscurido.TotalMilliseconds;
+
+            contador = Math.Max(contador - miliseg, 0);
+
+            if (pictureBox1.Image != null)
+            {
+                BarcodeReader barcodeReader = new BarcodeReader();
+                Result result = barcodeReader.Decode((Bitmap)pictureBox1.Image);
+
+                if (result != null)
+                {
+                    txt_QRCode.ForeColor = Color.White;
+                    txt_QRCode.Text = result.ToString();
+                    timer1.Stop();
+                    if (captureDevice.IsRunning)
+                    {
+                        captureDevice.Stop();
+                    }
+                }
+            }
         }
     }
 }

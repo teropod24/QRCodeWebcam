@@ -79,10 +79,7 @@ namespace Login
                         {
                             pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
                             MessageBox.Show("Access to QRGeneration accepted!");
-                            this.Hide();
-                            var qrForm = new QRGeneration();
-                            qrForm.ShowDialog();
-                            this.Show(); 
+                            OpenForm(new QRGeneration());
                         }
                         else
                         {
@@ -102,6 +99,13 @@ namespace Login
             }
         }
 
+        private void OpenForm(Form newform)
+        {
+            newform.TopLevel = false;
+            pnl_forms.Controls.Add(newform);
+            newform.Show();
+
+        }
 
         private string GenerarContraseña(int longitud)
         {

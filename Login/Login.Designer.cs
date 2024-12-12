@@ -47,6 +47,7 @@ namespace Login
             this.btm_iniciar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_contador = new System.Windows.Forms.Label();
+            this.pnl_forms = new System.Windows.Forms.Panel();
             this.gbx_verification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_coords.SuspendLayout();
@@ -233,12 +234,20 @@ namespace Login
             this.lbl_contador.TabIndex = 5;
             this.lbl_contador.Text = "Contador:";
             // 
+            // pnl_forms
+            // 
+            this.pnl_forms.Location = new System.Drawing.Point(960, 68);
+            this.pnl_forms.Name = "pnl_forms";
+            this.pnl_forms.Size = new System.Drawing.Size(948, 1008);
+            this.pnl_forms.TabIndex = 6;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(937, 535);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.pnl_forms);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
             this.Controls.Add(this.gbx_coords);
@@ -276,6 +285,7 @@ namespace Login
         private System.Windows.Forms.Button btm_iniciar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_contador;
+        private System.Windows.Forms.Panel pnl_forms;
     }
 }
 
