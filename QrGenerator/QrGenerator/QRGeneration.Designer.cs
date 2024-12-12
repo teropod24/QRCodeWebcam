@@ -108,7 +108,6 @@ namespace QrGenerator
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QRGeneration";
             this.Text = "QR Generation";
-            this.Load += new System.EventHandler(this.QRGeneration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
