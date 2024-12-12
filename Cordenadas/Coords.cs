@@ -54,6 +54,7 @@ namespace Cordenadas
                     generatedNumbers.Add(number);
 
                     Label lbl = new Label();
+                    lbl.ForeColor = Color.White;
                     lbl.Text = number.ToString("D4");
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
                     lbl.Dock = DockStyle.Fill;
