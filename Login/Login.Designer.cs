@@ -47,8 +47,6 @@ namespace Login
             this.btm_iniciar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_contador = new System.Windows.Forms.Label();
-            this.btm_next = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbx_verification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_coords.SuspendLayout();
@@ -93,33 +91,33 @@ namespace Login
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
-            this.lbl_codigo.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.ForeColor = System.Drawing.Color.Orange;
             this.lbl_codigo.Location = new System.Drawing.Point(225, 102);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(21, 15);
+            this.lbl_codigo.Size = new System.Drawing.Size(26, 17);
             this.lbl_codigo.TabIndex = 3;
             this.lbl_codigo.Text = "XX";
             // 
             // lbl_otp_code
             // 
             this.lbl_otp_code.AutoSize = true;
-            this.lbl_otp_code.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_otp_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_otp_code.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_otp_code.Location = new System.Drawing.Point(92, 133);
             this.lbl_otp_code.Name = "lbl_otp_code";
-            this.lbl_otp_code.Size = new System.Drawing.Size(60, 15);
+            this.lbl_otp_code.Size = new System.Drawing.Size(78, 17);
             this.lbl_otp_code.TabIndex = 2;
             this.lbl_otp_code.Text = "OTP Code:";
             // 
             // lbl_authentification
             // 
             this.lbl_authentification.AutoSize = true;
-            this.lbl_authentification.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_authentification.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_authentification.ForeColor = System.Drawing.Color.Orange;
             this.lbl_authentification.Location = new System.Drawing.Point(45, 61);
             this.lbl_authentification.Name = "lbl_authentification";
-            this.lbl_authentification.Size = new System.Drawing.Size(134, 15);
+            this.lbl_authentification.Size = new System.Drawing.Size(145, 17);
             this.lbl_authentification.TabIndex = 1;
             this.lbl_authentification.Text = "Base Authentification:";
             // 
@@ -143,7 +141,7 @@ namespace Login
             this.btn_validar_coord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btn_validar_coord.Enabled = false;
             this.btn_validar_coord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_validar_coord.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_validar_coord.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_validar_coord.ForeColor = System.Drawing.Color.Orange;
             this.btn_validar_coord.Location = new System.Drawing.Point(299, 96);
             this.btn_validar_coord.Name = "btn_validar_coord";
@@ -151,6 +149,7 @@ namespace Login
             this.btn_validar_coord.TabIndex = 5;
             this.btn_validar_coord.Text = "Validar";
             this.btn_validar_coord.UseVisualStyleBackColor = false;
+            this.btn_validar_coord.Click += new System.EventHandler(this.btn_validar_coord_Click_1);
             // 
             // pictureBox2
             // 
@@ -165,33 +164,33 @@ namespace Login
             // lbl_generate_Coords
             // 
             this.lbl_generate_Coords.AutoSize = true;
-            this.lbl_generate_Coords.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_generate_Coords.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_generate_Coords.ForeColor = System.Drawing.Color.Orange;
             this.lbl_generate_Coords.Location = new System.Drawing.Point(225, 102);
             this.lbl_generate_Coords.Name = "lbl_generate_Coords";
-            this.lbl_generate_Coords.Size = new System.Drawing.Size(21, 15);
+            this.lbl_generate_Coords.Size = new System.Drawing.Size(26, 17);
             this.lbl_generate_Coords.TabIndex = 3;
             this.lbl_generate_Coords.Text = "XX";
             // 
             // lbl_coords
             // 
             this.lbl_coords.AutoSize = true;
-            this.lbl_coords.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_coords.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_coords.ForeColor = System.Drawing.Color.LightBlue;
             this.lbl_coords.Location = new System.Drawing.Point(56, 133);
             this.lbl_coords.Name = "lbl_coords";
-            this.lbl_coords.Size = new System.Drawing.Size(114, 15);
+            this.lbl_coords.Size = new System.Drawing.Size(134, 17);
             this.lbl_coords.TabIndex = 2;
             this.lbl_coords.Text = "Code Coordenadas:";
             // 
             // lbl_central
             // 
             this.lbl_central.AutoSize = true;
-            this.lbl_central.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_central.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_central.ForeColor = System.Drawing.Color.Orange;
             this.lbl_central.Location = new System.Drawing.Point(45, 61);
             this.lbl_central.Name = "lbl_central";
-            this.lbl_central.Size = new System.Drawing.Size(154, 15);
+            this.lbl_central.Size = new System.Drawing.Size(158, 17);
             this.lbl_central.TabIndex = 1;
             this.lbl_central.Text = "Central Authentification:";
             // 
@@ -209,7 +208,7 @@ namespace Login
             // btm_iniciar
             // 
             this.btm_iniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btm_iniciar.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btm_iniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btm_iniciar.ForeColor = System.Drawing.Color.LightGreen;
             this.btm_iniciar.Location = new System.Drawing.Point(12, 68);
             this.btm_iniciar.Name = "btm_iniciar";
@@ -226,41 +225,13 @@ namespace Login
             // lbl_contador
             // 
             this.lbl_contador.AutoSize = true;
-            this.lbl_contador.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_contador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_contador.ForeColor = System.Drawing.Color.LightGreen;
             this.lbl_contador.Location = new System.Drawing.Point(12, 138);
             this.lbl_contador.Name = "lbl_contador";
-            this.lbl_contador.Size = new System.Drawing.Size(64, 15);
+            this.lbl_contador.Size = new System.Drawing.Size(70, 17);
             this.lbl_contador.TabIndex = 5;
             this.lbl_contador.Text = "Contador:";
-            // 
-            // btm_next
-            // 
-            this.btm_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btm_next.Font = new System.Drawing.Font("Digital-7", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btm_next.ForeColor = System.Drawing.Color.LightGreen;
-            this.btm_next.Location = new System.Drawing.Point(109, 68);
-            this.btm_next.Name = "btm_next";
-            this.btm_next.Size = new System.Drawing.Size(91, 40);
-            this.btm_next.TabIndex = 6;
-            this.btm_next.Text = "Next";
-<<<<<<< HEAD
-            this.btm_next.UseVisualStyleBackColor = true;
-            this.btm_next.Visible = false;
-=======
-            this.btm_next.UseVisualStyleBackColor = false;
->>>>>>> f10f61ca477582ca07e4804e939d0cf829e59a83
-            this.btm_next.Click += new System.EventHandler(this.btm_next_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(353, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -268,8 +239,6 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(937, 535);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btm_next);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
             this.Controls.Add(this.gbx_coords);
@@ -307,8 +276,6 @@ namespace Login
         private System.Windows.Forms.Button btm_iniciar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_contador;
-        private System.Windows.Forms.Button btm_next;
-        private System.Windows.Forms.Button button1;
     }
 }
 

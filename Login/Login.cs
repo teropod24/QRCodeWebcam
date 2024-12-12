@@ -28,8 +28,6 @@ namespace Login
         {
             InitializeComponent();
             ArduinoPort = new SerialPort();
-            coordsForm = new Coords();
-            coordsForm.Show(); // Asegúrate de mostrar el formulario de coordenadas
             //qRGeneration.Show();
 
             QRGeneration qRGeneration = new QRGeneration();
@@ -80,10 +78,11 @@ namespace Login
                         if (passwordValido)
                         {
                             pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
-                            btm_next.Visible = true;
                             MessageBox.Show("Access to QRGeneration accepted!");
-                            QRGeneration qrForm = new QRGeneration();
+                            this.Hide();
+                            var qrForm = new QRGeneration();
                             qrForm.ShowDialog();
+                            this.Show(); 
                         }
                         else
                         {
@@ -102,6 +101,7 @@ namespace Login
                 MessageBox.Show($"Error al procesar los datos recibidos: {ex.Message}");
             }
         }
+
 
         private string GenerarContraseña(int longitud)
         {
@@ -159,22 +159,6 @@ namespace Login
             {
                 MessageBox.Show($"Coordenada no encontrada: {coordIngresada}");
             }
-        }
-
-        private void btn_validar_coord_Click(object sender, EventArgs e)
-        {
-            string coordIngresada = lbl_generate_Coords.Text.ToUpper(); // Coordenada generada
-            if (int.TryParse(txt_coords.Text, out int valorIngresado)) // Valor ingresado
-            {
-                // Validar si la coordenada generada existe y es válida
-                ValidarCoordenada(coordIngresada, valorIngresado);
-                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
-            }
-            else
-            {
-                MessageBox.Show("Por favor ingresa un valor numérico válido.");
-                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
-            }          
         }
         private void btm_iniciar_Click(object sender, EventArgs e)
         {
@@ -241,39 +225,22 @@ namespace Login
                 timer1.Stop();
             }
         }
-
-        private void btm_next_Click(object sender, EventArgs e)
+        private void btn_validar_coord_Click_1(object sender, EventArgs e)
         {
-            QRGeneration qRGeneration = new QRGeneration();
-            qRGeneration.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string server = "smtp.gmail.com";
-            string to = "jx.paredes@sarria.salesians.cat";
-            string from = "p8171843@gmail.com";
-            MailMessage message = new MailMessage(from, to);
-
-            message.Subject = "Using the new SMTP client.";
-            message.Body = $"First Order StarKiller Section\nWe send you a validation code (OTP - one time password) that has a validity periode of 1 minute\nThe introduction of the code in the system is mandatory so that you can authenticate and activate the weapon\n\nCODE: {lbl_codigo.Text}";
-
-            SmtpClient client = new SmtpClient(server)
+            string coordIngresada = lbl_generate_Coords.Text.ToUpper(); // Coordenada generada
+            if (int.TryParse(txt_coords.Text, out int valorIngresado)) // Valor ingresado
             {
-                Port = 587,
-                EnableSsl = true,
-                Credentials = new NetworkCredential(from, "umtt ctkz fqpz eowd")
-            };
+                // Validar si la coordenada generada existe y es válida
 
-            try
-            {
-                client.Send(message);
-                MessageBox.Show("enviado");
+                ValidarCoordenada(coordIngresada, valorIngresado);
+                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                coordsForm = new Coords();
+                coordsForm.Show();
             }
-            catch (Exception)
+            else
             {
-
-                MessageBox.Show("error");
+                MessageBox.Show("Por favor ingresa un valor numérico válido.");
+                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
             }
         }
     }

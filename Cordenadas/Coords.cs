@@ -29,9 +29,9 @@ namespace Cordenadas
         public Coords()
         {
             InitializeComponent();
-            //timer1.Interval = 10;
-            //tiempoIncial = DateTime.Now;
-            //timer1.Start();
+            timer1.Interval = 10;
+            tiempoIncial = DateTime.Now;
+            timer1.Start();
         }
         private void Coords_Load(object sender, EventArgs e)
         {
