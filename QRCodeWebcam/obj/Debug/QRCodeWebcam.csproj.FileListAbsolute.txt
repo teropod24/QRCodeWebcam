@@ -22,3 +22,6 @@ C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\obj\Debug\QRCodeWebcam.QRCodeWebcam.re
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.pdb
 C:\S2AM\Arduino\QRCodeWebcam\QRCodeWebcam\bin\Debug\Cordenadas.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\App\QRCodeWebcam.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\App\QRCodeWebcam.exe
+C:\S2AM\Arduino\QRCodeWebcam\App\QRCodeWebcam.pdb

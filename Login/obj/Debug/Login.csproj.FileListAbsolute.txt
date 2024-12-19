@@ -29,3 +29,6 @@ C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.presentation.dll
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\zxing.presentation.xml
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\AForge.Video.DirectShow.dll
 C:\S2AM\Arduino\QRCodeWebcam\Login\bin\Debug\AForge.Video.DirectShow.xml
+C:\S2AM\Arduino\QRCodeWebcam\App\Login.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\App\Login.exe
+C:\S2AM\Arduino\QRCodeWebcam\App\Login.pdb

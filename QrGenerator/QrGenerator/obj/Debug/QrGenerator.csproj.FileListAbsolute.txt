@@ -33,3 +33,6 @@ C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\zxing.xml
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\AForge.xml
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\AForge.Video.DirectShow.dll
 C:\S2AM\Arduino\QRCodeWebcam\QrGenerator\QrGenerator\bin\Debug\AForge.Video.DirectShow.xml
+C:\S2AM\Arduino\QRCodeWebcam\App\QrGenerator.exe.config
+C:\S2AM\Arduino\QRCodeWebcam\App\QrGenerator.exe
+C:\S2AM\Arduino\QRCodeWebcam\App\QrGenerator.pdb
