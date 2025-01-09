@@ -29,8 +29,6 @@ namespace Login
             InitializeComponent();
             ArduinoPort = new SerialPort();
             //qRGeneration.Show();
-
-            QRGeneration qRGeneration = new QRGeneration();
         }
 
         private void ContecarArduino()

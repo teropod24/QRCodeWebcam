@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QRCodeWebcam;
+using AccesDBB;
+
 
 namespace QrGenerator
 {
     public partial class QRGeneration : Form
     {
+        public string CodeUser { get; set; }
         public QRGeneration()
         {
             InitializeComponent();
@@ -22,15 +24,18 @@ namespace QrGenerator
         private void button1_Click(object sender, EventArgs e)
         {
             QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(txtQrCode.Text,QRCodeGenerator.ECCLevel.Q);
+            QRCodeData data = qr.CreateQrCode(txtQrCode.Text, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
-            pic.Image = code.GetGraphic(5);
+            pic.Image = code.GetGraphic(5);            
         }
 
         private void btm_next_Click(object sender, EventArgs e)
         {
-            QRCodeWebcam.QRCodeWebcam qRCodeWebcam = new QRCodeWebcam.QRCodeWebcam();
-            qRCodeWebcam.Show();
+            AccesDBB.AccesData accesData = new AccesData();
+            string columnName = "photo";
+            object newValue = txtQrCode.Text;
+
+            accesData.Actualitzar("Users", CodeUser, columnName, newValue);
             Close();
         }
     }
