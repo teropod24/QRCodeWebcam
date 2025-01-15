@@ -33,11 +33,13 @@ namespace Login
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.gbx_verification = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_otp_code = new System.Windows.Forms.Label();
             this.lbl_authentification = new System.Windows.Forms.Label();
             this.gbx_coords = new System.Windows.Forms.GroupBox();
             this.btn_validar_coord = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_generate_Coords = new System.Windows.Forms.Label();
             this.lbl_coords = new System.Windows.Forms.Label();
             this.lbl_central = new System.Windows.Forms.Label();
@@ -45,16 +47,13 @@ namespace Login
             this.btm_iniciar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_contador = new System.Windows.Forms.Label();
-            this.pnl_forms = new System.Windows.Forms.Panel();
             this.lbl_titol = new System.Windows.Forms.Label();
             this.pbx_systema = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbx_verification.SuspendLayout();
-            this.gbx_coords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_systema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbx_coords.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_systema)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_pass
@@ -81,6 +80,16 @@ namespace Login
             this.gbx_verification.Size = new System.Drawing.Size(634, 188);
             this.gbx_verification.TabIndex = 2;
             this.gbx_verification.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(484, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // lbl_codigo
             // 
@@ -144,6 +153,16 @@ namespace Login
             this.btn_validar_coord.Text = "Validar";
             this.btn_validar_coord.UseVisualStyleBackColor = false;
             this.btn_validar_coord.Click += new System.EventHandler(this.btn_validar_coord_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(484, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 85);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // lbl_generate_Coords
             // 
@@ -217,13 +236,6 @@ namespace Login
             this.lbl_contador.TabIndex = 5;
             this.lbl_contador.Text = "Contador:";
             // 
-            // pnl_forms
-            // 
-            this.pnl_forms.Location = new System.Drawing.Point(960, 68);
-            this.pnl_forms.Name = "pnl_forms";
-            this.pnl_forms.Size = new System.Drawing.Size(948, 1008);
-            this.pnl_forms.TabIndex = 6;
-            // 
             // lbl_titol
             // 
             this.lbl_titol.AutoSize = true;
@@ -245,26 +257,6 @@ namespace Login
             this.pbx_systema.TabIndex = 8;
             this.pbx_systema.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(484, 70);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 85);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(484, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,7 +265,6 @@ namespace Login
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.pbx_systema);
             this.Controls.Add(this.lbl_titol);
-            this.Controls.Add(this.pnl_forms);
             this.Controls.Add(this.lbl_contador);
             this.Controls.Add(this.btm_iniciar);
             this.Controls.Add(this.gbx_coords);
@@ -284,11 +275,11 @@ namespace Login
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gbx_verification.ResumeLayout(false);
             this.gbx_verification.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbx_coords.ResumeLayout(false);
             this.gbx_coords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_systema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_systema)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,7 +304,6 @@ namespace Login
         private System.Windows.Forms.Button btm_iniciar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_contador;
-        private System.Windows.Forms.Panel pnl_forms;
         private System.Windows.Forms.Label lbl_titol;
         private System.Windows.Forms.PictureBox pbx_systema;
     }

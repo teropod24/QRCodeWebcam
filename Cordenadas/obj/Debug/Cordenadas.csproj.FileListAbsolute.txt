@@ -10,4 +10,3 @@ C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.pdb
 C:\S2AM\Arduino\QRCodeWebcam\App\Cordenadas.exe.config
 C:\S2AM\Arduino\QRCodeWebcam\App\Cordenadas.exe
 C:\S2AM\Arduino\QRCodeWebcam\App\Cordenadas.pdb
-C:\S2AM\Arduino\QRCodeWebcam\Cordenadas\obj\Debug\Cordenadas.csproj.AssemblyReference.cache

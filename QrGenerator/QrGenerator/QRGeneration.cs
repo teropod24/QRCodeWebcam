@@ -31,12 +31,36 @@ namespace QrGenerator
 
         private void btm_next_Click(object sender, EventArgs e)
         {
-            AccesDBB.AccesData accesData = new AccesData();
-            string columnName = "photo";
-            object newValue = txtQrCode.Text;
+            Hide();
+            QRCodeWebcam.QRCodeWebcam qRCodeWebcam = new QRCodeWebcam.QRCodeWebcam();
+            qRCodeWebcam.Show();
+        }
 
-            accesData.Actualitzar("Users", CodeUser, columnName, newValue);
-            Close();
+        private void btm_validarUser_Click(object sender, EventArgs e)
+        {
+            AccesDBB.AccesData accesData = new AccesDBB.AccesData();
+            string codeUser = txt_user.Text.Trim();
+
+            DataSet dts = accesData.PortaTaula("Users");
+            DataRow[] rows = dts.Tables[0].Select($"codeUser = '{codeUser}'");
+
+            if (rows.Length > 0)
+            {
+                DataRow userRow = rows[0];
+
+                txt_Desc.Text = userRow["descUser"].ToString();
+                txt_Edad.Text = userRow["edad"].ToString();
+                txt_Planeta.Text = userRow["planeta"].ToString();
+                txt_fecha.Text = userRow["dataNacimiento"].ToString();
+                txt_user.Text = userRow["nom"].ToString();
+
+                txtQrCode.Text = $"{txt_user.Text}, {txt_Edad.Text}, {txt_fecha.Text}";
+            }
+            else
+            {
+                MessageBox.Show("El usuario no existe.");
+            }
+
         }
     }
 }

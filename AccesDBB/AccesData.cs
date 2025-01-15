@@ -46,7 +46,7 @@ namespace AccesDBB
         public string PerformLogin(string codeUser)
         {
             DataRow[] rowsFound;
-            string descUser, photo;
+            string descUser, edadUser, planetaUser;
 
             DataSet dts = PortaTaula("Users");
             rowsFound = dts.Tables[0].Select($"codeUser = '{codeUser}'");
@@ -54,7 +54,8 @@ namespace AccesDBB
             if (rowsFound.Length > 0)
             {
                 descUser = rowsFound[0].Field<string>("descUser");
-                photo = rowsFound[0].Field<string>("photo");
+                edadUser = rowsFound[0].Field<string>("edad");
+                planetaUser = rowsFound[0].Field<string>("planeta");
             }
             else
             {

@@ -104,10 +104,6 @@
       <Project>{8a53b907-233e-487e-891c-d521dadfb7ed}</Project>
       <Name>Cordenadas</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QrGenerator\QrGenerator\QrGenerator.csproj">
-      <Project>{281061dc-3bc0-4add-9aae-0b8438b3ac30}</Project>
-      <Name>QrGenerator</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

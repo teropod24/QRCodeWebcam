@@ -29,7 +29,6 @@ namespace Cordenadas
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tbl_cordenadas = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_b = new System.Windows.Forms.Label();
             this.lbl_c = new System.Windows.Forms.Label();
@@ -40,7 +39,7 @@ namespace Cordenadas
             this.lbl_tres = new System.Windows.Forms.Label();
             this.lbl_cuatro = new System.Windows.Forms.Label();
             this.lbl_cinco = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btm_backMenu = new System.Windows.Forms.Button();
             this.tbl_cordenadas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,16 +191,31 @@ namespace Cordenadas
             this.lbl_cinco.Text = "5";
             this.lbl_cinco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btm_backMenu
+            // 
+            this.btm_backMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_backMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btm_backMenu.ForeColor = System.Drawing.Color.LightGreen;
+            this.btm_backMenu.Location = new System.Drawing.Point(498, 428);
+            this.btm_backMenu.Name = "btm_backMenu";
+            this.btm_backMenu.Size = new System.Drawing.Size(208, 44);
+            this.btm_backMenu.TabIndex = 5;
+            this.btm_backMenu.Text = "Menu";
+            this.btm_backMenu.UseVisualStyleBackColor = false;
+            this.btm_backMenu.Click += new System.EventHandler(this.btm_backMenu_Click);
+            // 
             // Coords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(718, 404);
+            this.ClientSize = new System.Drawing.Size(931, 615);
+            this.Controls.Add(this.btm_backMenu);
             this.Controls.Add(this.tbl_cordenadas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Coords";
             this.Text = "Coordenadas - Matrix Style";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Coords_Load);
             this.tbl_cordenadas.ResumeLayout(false);
             this.tbl_cordenadas.PerformLayout();
@@ -222,7 +236,7 @@ namespace Cordenadas
         private System.Windows.Forms.Label lbl_tres;
         private System.Windows.Forms.Label lbl_cuatro;
         private System.Windows.Forms.Label lbl_cinco;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btm_backMenu;
     }
 }
 

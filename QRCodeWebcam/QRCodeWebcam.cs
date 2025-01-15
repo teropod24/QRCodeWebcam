@@ -12,7 +12,6 @@ using AForge.Video.DirectShow;
 using ZXing;
 using System.Security.Cryptography;
 using Cordenadas;
-using QrGenerator;
 
 namespace QRCodeWebcam
 {
@@ -57,17 +56,6 @@ namespace QRCodeWebcam
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (captureDevice.IsRunning)
-            {
-                captureDevice.Stop();
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-        }
 
         private int[] GenerarNumerosAleatorios(int cantidad, int min, int max)
         {
@@ -96,6 +84,8 @@ namespace QRCodeWebcam
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Coords coords = new Coords();
+            coords.Show();
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -121,48 +111,6 @@ namespace QRCodeWebcam
                     }
                 }
             }
-        }
-
-        private void btm_User_Click(object sender, EventArgs e)
-        {
-            AccesDBB.AccesData accesData = new AccesDBB.AccesData();
-            string codeUser = txt_Code.Text.Trim();
-
-            string description = accesData.PerformLogin(codeUser);
-
-            if (string.IsNullOrEmpty(description))
-            {
-                MessageBox.Show("El usuario no existe.");
-            }
-
-            else
-            {
-                txt_Desc.Text = description;
-
-                DataSet dts = accesData.PortaTaula("Users");
-                DataRow[] rows = dts.Tables[0].Select($"codeUser = '{codeUser}'");
-
-                if (rows.Length > 0)
-                {
-                    string photo = rows[0]["photo"].ToString();
-
-                    if (string.IsNullOrEmpty(photo))
-                    {
-                        OpenForm(new QRGeneration { CodeUser = codeUser });
-                    }
-                }
-            }
-
-
-
-        }
-
-        private void OpenForm(Form newform)
-        {
-            newform.TopLevel = false;
-            pnl_QRgenerate.Controls.Add(newform);
-            newform.Show();
-
         }
     }
 }

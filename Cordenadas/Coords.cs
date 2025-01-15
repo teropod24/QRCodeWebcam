@@ -13,26 +13,23 @@ namespace Cordenadas
 {
     public partial class Coords : Form
     {
-
-        private string Coordenadas;
-        private DateTime tiempoIncial;
-        private int contador = 10000;
         public Dictionary<string, int> CoordenadasValores { get; private set; } = new Dictionary<string, int>();
-
-        public string coordenadas
-        {
-            get { return Coordenadas; }
-            set { Coordenadas = value; }
-        }
-
-
+        public int ValorCoord { get; set; }
+        public string PosicionCoord { get; set; }
         public Coords()
         {
             InitializeComponent();
-            timer1.Interval = 10;
-            tiempoIncial = DateTime.Now;
-            timer1.Start();
+            InicializarCoordenadas();
         }
+
+        public void InicializarCoordenadas()
+        {
+            if (string.IsNullOrEmpty(PosicionCoord) || ValorCoord == 0)
+            {
+                Coords_Load(this, EventArgs.Empty); // Solo llama a Load si los valores no están inicializados
+            }
+        }
+
         private void Coords_Load(object sender, EventArgs e)
         {
             CoordenadasValores.Clear();
@@ -53,36 +50,43 @@ namespace Cordenadas
 
                     generatedNumbers.Add(number);
 
-                    Label lbl = new Label();
-                    lbl.ForeColor = Color.White;
-                    lbl.Text = number.ToString("D4");
-                    lbl.TextAlign = ContentAlignment.MiddleCenter;
-                    lbl.Dock = DockStyle.Fill;
-
-                    tbl_cordenadas.Controls.Add(lbl, col, row);
-
                     char letter = (char)('A' + row - 1);
                     string coord = $"{letter}{col}";
 
                     CoordenadasValores[coord] = number;
+
+                    PosicionCoord = coord;
+                    ValorCoord = number;
+
+                    Label lbl = new Label();
+                    lbl.ForeColor = Color.White;
+                    if (number == ValorCoord)
+                    {
+                        lbl.BackColor = Color.Red;
+                    }
+                    lbl.Text = number.ToString();
+                    lbl.TextAlign = ContentAlignment.MiddleCenter;
+                    lbl.Dock = DockStyle.Fill;
                 }
             }
 
             tbl_cordenadas.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public string GenerarCoordenadas()
         {
-            TimeSpan tiempoTranscurrido = DateTime.Now - tiempoIncial;
-            int milisegundosRestantes = contador - (int)tiempoTranscurrido.TotalMilliseconds;
-
-            if (milisegundosRestantes <= 0)
-            {
-                timer1.Stop();
-                Close();
-            }
+            return PosicionCoord;  // Devuelve la coordenada seleccionada
         }
 
+        public int GenerarValorCoordenadas()
+        {
+            return ValorCoord;  // Devuelve la coordenada seleccionada
+        }
+
+        private void btm_backMenu_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
 
