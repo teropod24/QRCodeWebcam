@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using QrGenerator;
 using ZXing;
-using QrGenerator;
 using Cordenadas;
 using System.Net.Mail;
 using System.Net;
@@ -31,7 +30,7 @@ namespace Login
             coords.Show();
             this.BringToFront();
             InitializeComponent();
-            //ArduinoPort = new SerialPort();
+            ArduinoPort = new SerialPort();
         }
         private void ContecarArduino()
         {
