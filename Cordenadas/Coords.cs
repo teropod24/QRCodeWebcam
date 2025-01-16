@@ -100,7 +100,7 @@ namespace Cordenadas
 
         private void btm_backMenu_Click(object sender, EventArgs e)
         {
-            Hide();
+            SendToBack();
         }
     }
 }
