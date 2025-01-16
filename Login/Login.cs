@@ -195,6 +195,7 @@ namespace Login
             if (contador <= 0)
             {
                 timer1.Stop();
+                coords.Close();
             }
         }
         private void btn_validar_coord_Click_1(object sender, EventArgs e)

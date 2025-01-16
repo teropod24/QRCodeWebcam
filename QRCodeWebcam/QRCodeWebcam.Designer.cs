@@ -37,6 +37,7 @@ namespace QRCodeWebcam
             this.txt_QRCode = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,12 +115,24 @@ namespace QRCodeWebcam
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(575, 257);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(363, 39);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "QR CODE WEB CAM";
+            // 
             // QRCodeWebcam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1940, 1080);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_QRCode);
             this.Controls.Add(this.pictureBox1);
@@ -147,6 +160,7 @@ namespace QRCodeWebcam
         private System.Windows.Forms.TextBox txt_QRCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
