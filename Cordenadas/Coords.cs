@@ -19,73 +19,88 @@ namespace Cordenadas
         public Coords()
         {
             InitializeComponent();
-            InicializarCoordenadas();
-        }
-
-        public void InicializarCoordenadas()
-        {
-            if (string.IsNullOrEmpty(PosicionCoord) || ValorCoord == 0)
-            {
-                Coords_Load(this, EventArgs.Empty); // Solo llama a Load si los valores no están inicializados
-            }
         }
 
         private void Coords_Load(object sender, EventArgs e)
         {
-            CoordenadasValores.Clear();
-
+            if (!string.IsNullOrEmpty(PosicionCoord) && ValorCoord != 0)
+            {
+                return; // Salir para evitar reinicialización
+            };
             HashSet<int> generatedNumbers = new HashSet<int>();
             Random random = new Random();
+            CoordenadasValores.Clear();
+            tbl_cordenadas.Controls.Clear();
 
-            for (int row = 1; row < 5; row++)
+            int rows = 5;
+            int cols = 6;
+
+
+            int randomRow = random.Next(1, rows);
+            int randomCol = random.Next(1, cols);
+
+            for (int row = 0; row < rows; row++)
             {
-                for (int col = 1; col < 6; col++)
+                for (int col = 0; col < cols; col++)
                 {
-                    int number;
-
-                    do
+                    Label lbl = new Label
                     {
-                        number = random.Next(0, 10000);
-                    } while (generatedNumbers.Contains(number));
+                        ForeColor = Color.White,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Dock = DockStyle.Fill,
+                    };
 
-                    generatedNumbers.Add(number);
-
-                    char letter = (char)('A' + row - 1);
-                    string coord = $"{letter}{col}";
-
-                    CoordenadasValores[coord] = number;
-
-                    PosicionCoord = coord;
-                    ValorCoord = number;
-
-                    Label lbl = new Label();
-                    lbl.ForeColor = Color.White;
-                    if (number == ValorCoord)
+                    if (row == 0 && col > 0)
                     {
-                        lbl.BackColor = Color.Red;
+                        lbl.Text = col.ToString();
+                        lbl.BackColor = Color.Gray;
                     }
-                    lbl.Text = number.ToString();
-                    lbl.TextAlign = ContentAlignment.MiddleCenter;
-                    lbl.Dock = DockStyle.Fill;
+                    else if (col == 0 && row > 0)
+                    {
+                        lbl.Text = ((char)('A' + row - 1)).ToString();
+                        lbl.BackColor = Color.Gray;
+                    }
+                    else if (row > 0 && col > 0)
+                    {
+                        int number;
+
+                        do
+                        {
+                            number = random.Next(0, 10000);
+                        } while (generatedNumbers.Contains(number));
+                        generatedNumbers.Add(number);
+
+                        lbl.Text = number.ToString();
+
+                        string coord = $"{(char)('A' + row - 1)}{col}";
+                        CoordenadasValores[coord] = number;
+
+                        if (row == randomRow && col == randomCol)
+                        {
+                            PosicionCoord = coord;
+                            ValorCoord = number;
+                            lbl.BackColor = Color.Red;
+                        }
+                    }
+
+                    tbl_cordenadas.Controls.Add(lbl, col, row);
                 }
             }
-
-            tbl_cordenadas.Show();
         }
 
         public string GenerarCoordenadas()
         {
-            return PosicionCoord;  // Devuelve la coordenada seleccionada
+            return PosicionCoord;
         }
 
         public int GenerarValorCoordenadas()
         {
-            return ValorCoord;  // Devuelve la coordenada seleccionada
+            return ValorCoord;
         }
 
         private void btm_backMenu_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
         }
     }
 }

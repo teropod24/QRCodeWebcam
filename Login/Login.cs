@@ -20,17 +20,19 @@ namespace Login
         string pasword;
         private int passwordcadena = 6;
         private bool startbtn = false;
-        Coords coordsForm ;
+        Cordenadas.Coords coords = new Coords();
         private DateTime tiempoIncial;
+        private string posicionCoords;
+        private int valorCoords;
         private int contador = 60000;
 
         public Login()
         {
+            coords.Show();
+            this.BringToFront();
             InitializeComponent();
-            ArduinoPort = new SerialPort();
-            //qRGeneration.Show();
+            //ArduinoPort = new SerialPort();
         }
-
         private void ContecarArduino()
         {
             if (SerialPort.GetPortNames().Length > 0)
@@ -48,7 +50,6 @@ namespace Login
                 MessageBox.Show("¡No estas conectado!");
             }
         }
-
         private void EnviarPasswordAlArduino(string password)
         {
             if (ArduinoPort.IsOpen)
@@ -76,7 +77,6 @@ namespace Login
                         if (passwordValido)
                         {
                             pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
-                            MessageBox.Show("Access to QRGeneration accepted!");
                             QrGenerator.QRGeneration qRGeneration = new QRGeneration();
                             qRGeneration.Show();
                         }
@@ -86,10 +86,6 @@ namespace Login
                             MessageBox.Show("Contraseña incorrecta.");
                         }
                     }));
-                }
-                else
-                {
-                    MessageBox.Show("Formato de datos incorrecto recibido desde el Arduino.");
                 }
             }
             catch (Exception ex)
@@ -105,7 +101,7 @@ namespace Login
                 byte[] valor = new byte[4];
                 rngCrypto.GetBytes(valor);
 
-                int i = BitConverter.ToInt32(valor,0);
+                int i = BitConverter.ToInt32(valor, 0);
 
                 i = Math.Abs(i);
 
@@ -116,49 +112,25 @@ namespace Login
                 return val;
             }
         }
-        public string GenerarCoordenadas()
+
+        private bool ValidarCoordenada(string coordIngresada, int valorIngresado)
         {
-            string coords;
+            bool validarCoords = false;
 
-            Random random = new Random();
-
-            char letter = (char)random.Next('A', 'D' + 1);
-            int number = random.Next(1, 5);
-            coords = $"{letter}{number}";
-
-            lbl_generate_Coords.Text = coords;
-
-            return coords;
-        }
-
-        private void ValidarCoordenada(string coordIngresada, int valorIngresado)
-        {
-            if (coordsForm.CoordenadasValores.Count == 0)
+            if (posicionCoords == coordIngresada)
             {
-                MessageBox.Show("No se han generado coordenadas. Por favor, genera las coordenadas primero.");
-                return;
-            }
-
-            if (coordsForm.CoordenadasValores.TryGetValue(coordIngresada, out int valorEsperado))
-            {
-                if (valorEsperado == valorIngresado)
+                if (valorCoords == valorIngresado)
                 {
-                    MessageBox.Show($"¡Coordenada válida! Valor esperado: {valorEsperado}");
-                }
-                else
-                {
-                    MessageBox.Show($"El valor ingresado ({valorIngresado}) no coincide con la coordenada. Valor esperado: {valorEsperado}");
+                    validarCoords = true;
                 }
             }
-            else
-            {
-                MessageBox.Show($"Coordenada no encontrada: {coordIngresada}");
-            }
+
+            return validarCoords;
         }
         private void btm_iniciar_Click(object sender, EventArgs e)
         {
             if (!startbtn)
-            {               
+            {
                 ContecarArduino();
 
                 pasword = GenerarContraseña(passwordcadena);
@@ -166,40 +138,46 @@ namespace Login
 
                 EnviarPasswordAlArduino(pasword);
 
-                GenerarCoordenadas();
+                ActualizarCoordenadas();
+
                 startbtn = true;
                 txt_coords.Enabled = true;
                 txt_pass.Enabled = true;
                 btn_validar_coord.Enabled = true;
+                btm_coords.Enabled = true;
 
                 timer1.Interval = 10;
                 tiempoIncial = DateTime.Now;
                 timer1.Start();
+                EnviarCorreo();
+            }
+        }
 
-                string server = "smtp.gmail.com";
-                string to = "p8171843@gmail.com";
-                string from = "p8171843@gmail.com";
-                MailMessage message = new MailMessage(from, to);
+        private void EnviarCorreo()
+        {
+            string server = "smtp.gmail.com";
+            string to = "p8171843@gmail.com";
+            string from = "p8171843@gmail.com";
+            MailMessage message = new MailMessage(from, to);
 
-                message.Subject = "Using the new SMTP client.";
-                message.Body = $"First Order StarKiller Section\nWe send you a validation code (OTP - one time password) that has a validity periode of 1 minute\nThe introduction of the code in the system is mandatory so that you can authenticate and activate the weapon\n\nCODE: {lbl_codigo.Text}";
+            message.Subject = "Using the new SMTP client.";
+            message.Body = $"First Order StarKiller Section\nWe send you a validation code (OTP - one time password) that has a validity periode of 1 minute\nThe introduction of the code in the system is mandatory so that you can authenticate and activate the weapon\n\nCODE: {lbl_codigo.Text}";
 
-                SmtpClient client = new SmtpClient(server)
-                {
-                    Port = 587,
-                    EnableSsl = true,
-                    Credentials = new NetworkCredential(from, "umtt ctkz fqpz eowd")
-                };
+            SmtpClient client = new SmtpClient(server)
+            {
+                Port = 587,
+                EnableSsl = true,
+                Credentials = new NetworkCredential(from, "umtt ctkz fqpz eowd")
+            };
 
-                try
-                {
-                    client.Send(message);
-                }
-                catch (Exception)
-                {
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception)
+            {
 
-                    MessageBox.Show("error");
-                }
+                MessageBox.Show("error");
             }
         }
 
@@ -222,21 +200,50 @@ namespace Login
         }
         private void btn_validar_coord_Click_1(object sender, EventArgs e)
         {
-            string coordIngresada = lbl_generate_Coords.Text.ToUpper(); // Coordenada generada
-            if (int.TryParse(txt_coords.Text, out int valorIngresado)) // Valor ingresado
+            bool validarCoords;
+            string coordIngresada = lbl_generate_Coords.Text.ToUpper();
+            if (int.TryParse(txt_coords.Text, out int valorIngresado))
             {
                 // Validar si la coordenada generada existe y es válida
+                validarCoords = ValidarCoordenada(coordIngresada, valorIngresado);
+                if (validarCoords)
+                {
+                    pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                    timer1.Stop();
+                }
+                else
+                {
+                    pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
+                }
 
-                ValidarCoordenada(coordIngresada, valorIngresado);
-                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
-                coordsForm = new Coords();
-                coordsForm.Show();
             }
             else
             {
                 MessageBox.Show("Por favor ingresa un valor numérico válido.");
                 pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
             }
+        }
+
+        private void ActualizarCoordenadas()
+        {
+            posicionCoords = coords.GenerarCoordenadas();
+            valorCoords = coords.GenerarValorCoordenadas();
+
+            if (!string.IsNullOrEmpty(posicionCoords))
+            {
+                lbl_generate_Coords.Text = posicionCoords; // Muestra la coordenada generada
+            }
+            else
+            {
+                lbl_generate_Coords.Text = "XX";
+                txt_coords.Text = string.Empty;
+            }
+        }
+
+        private void btm_coords_Click(object sender, EventArgs e)
+        {
+
+            coords.BringToFront();
         }
     }
 }

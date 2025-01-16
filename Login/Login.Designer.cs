@@ -38,6 +38,7 @@ namespace Login
             this.lbl_otp_code = new System.Windows.Forms.Label();
             this.lbl_authentification = new System.Windows.Forms.Label();
             this.gbx_coords = new System.Windows.Forms.GroupBox();
+            this.btm_coords = new System.Windows.Forms.Button();
             this.btn_validar_coord = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_generate_Coords = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@ namespace Login
             // gbx_coords
             // 
             this.gbx_coords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gbx_coords.Controls.Add(this.btm_coords);
             this.gbx_coords.Controls.Add(this.btn_validar_coord);
             this.gbx_coords.Controls.Add(this.pictureBox2);
             this.gbx_coords.Controls.Add(this.lbl_generate_Coords);
@@ -139,6 +141,22 @@ namespace Login
             this.gbx_coords.TabIndex = 3;
             this.gbx_coords.TabStop = false;
             // 
+            // btm_coords
+            // 
+            this.btm_coords.AutoSize = true;
+            this.btm_coords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btm_coords.Enabled = false;
+            this.btm_coords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_coords.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btm_coords.ForeColor = System.Drawing.Color.Orange;
+            this.btm_coords.Location = new System.Drawing.Point(327, 88);
+            this.btm_coords.Name = "btm_coords";
+            this.btm_coords.Size = new System.Drawing.Size(105, 31);
+            this.btm_coords.TabIndex = 6;
+            this.btm_coords.Text = "Coordenadas";
+            this.btm_coords.UseVisualStyleBackColor = false;
+            this.btm_coords.Click += new System.EventHandler(this.btm_coords_Click);
+            // 
             // btn_validar_coord
             // 
             this.btn_validar_coord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -146,7 +164,7 @@ namespace Login
             this.btn_validar_coord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_validar_coord.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_validar_coord.ForeColor = System.Drawing.Color.Orange;
-            this.btn_validar_coord.Location = new System.Drawing.Point(299, 96);
+            this.btn_validar_coord.Location = new System.Drawing.Point(357, 54);
             this.btn_validar_coord.Name = "btn_validar_coord";
             this.btn_validar_coord.Size = new System.Drawing.Size(75, 31);
             this.btn_validar_coord.TabIndex = 5;
@@ -306,6 +324,7 @@ namespace Login
         private System.Windows.Forms.Label lbl_contador;
         private System.Windows.Forms.Label lbl_titol;
         private System.Windows.Forms.PictureBox pbx_systema;
+        private System.Windows.Forms.Button btm_coords;
     }
 }
 

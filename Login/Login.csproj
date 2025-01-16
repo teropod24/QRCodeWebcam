@@ -92,6 +92,10 @@
       <Project>{8a53b907-233e-487e-891c-d521dadfb7ed}</Project>
       <Name>Cordenadas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QRCodeWebcam\QRCodeWebcam.csproj">
+      <Project>{8bd5e0fe-67d3-49da-8df4-28cfb65af5a5}</Project>
+      <Name>QRCodeWebcam</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QrGenerator\QrGenerator\QrGenerator.csproj">
       <Project>{281061dc-3bc0-4add-9aae-0b8438b3ac30}</Project>
       <Name>QrGenerator</Name>
