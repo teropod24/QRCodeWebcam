@@ -11,6 +11,7 @@ using Cordenadas;
 using System.Net.Mail;
 using System.Net;
 
+//Leo Varas, Enric Martorell & Juan Paredes
 namespace Login
 {
     public partial class Login : Form
@@ -75,13 +76,13 @@ namespace Login
 
                         if (passwordValido)
                         {
-                            pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                            pictureBox1.Image = Image.FromFile(@"Resources/icono-check.png");
                             QrGenerator.QRGeneration qRGeneration = new QRGeneration();
                             qRGeneration.Show();
                         }
                         else
                         {
-                            pictureBox1.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
+                            pictureBox1.Image = Image.FromFile(@"Resources/incorrect.png");
                             MessageBox.Show("Contraseña incorrecta.");
                         }
                     }));
@@ -208,19 +209,19 @@ namespace Login
                 validarCoords = ValidarCoordenada(coordIngresada, valorIngresado);
                 if (validarCoords)
                 {
-                    pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/icono-check.png");
+                    pictureBox2.Image = Image.FromFile(@"Resources/icono-check.png");
                     timer1.Stop();
                 }
                 else
                 {
-                    pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
+                    pictureBox2.Image = Image.FromFile(@"Resources/incorrect.png");
                 }
 
             }
             else
             {
                 MessageBox.Show("Por favor ingresa un valor numérico válido.");
-                pictureBox2.Image = Image.FromFile("C:/S2AM/Arduino/fotos_validate/incorrect.png");
+                pictureBox2.Image = Image.FromFile(@"Resources/incorrect.png");
             }
         }
 
